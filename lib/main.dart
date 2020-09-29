@@ -81,141 +81,66 @@ class CC5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> items2 = [
-      ListTile(
-        leading: CircleAvatar(
-            minRadius: 22.5,
-            maxRadius: 22.5,
-            child: Image.asset("assets/images/Vector (1).png")),
-        contentPadding: EdgeInsets.only(left: 20),
-        title: Text(
-          "Yokesh Mithoon (You)",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          "Student at NIT Calicut",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
-      ListTile(
-        leading: CircleAvatar(
-            minRadius: 22.5,
-            maxRadius: 22.5,
-            child: Image.asset("assets/images/Vector (2).png")),
-        contentPadding: EdgeInsets.only(left: 20),
-        title: Text(
-          "Wade Warren",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          "Student at NIT Calicut",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
-      ListTile(
-        leading: CircleAvatar(
-          minRadius: 22.5,
-          maxRadius: 22.5,
-          backgroundColor: Color(0xffe5e5e5),
-          child: Icon(Icons.mail),
-        ),
-        contentPadding: EdgeInsets.only(left: 20),
-        title: Text(
-          "yogeshmithoon@gmail.com",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
-      ListTile(
-        leading: CircleAvatar(
-            minRadius: 22.5,
-            maxRadius: 22.5,
-            child: Image.asset("assets/images/Vector (3).png")),
-        contentPadding: EdgeInsets.only(left: 20, right: 20),
-        title: Text(
-          "Cameron Williamson",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          "Interaction Manager",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-        trailing: Container(
-          alignment: Alignment.center,
-          width: 70,
-          height: 20,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: Color(0xff44b887)),
-          ),
-          child: Text(
-            "Manager",
-            style: TextStyle(color: Color(0xff44b887)),
-          ),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
-      ListTile(
-        leading: CircleAvatar(
-            minRadius: 22.5,
-            maxRadius: 22.5,
-            child: Image.asset("assets/images/Vector (1).png")),
-        contentPadding: EdgeInsets.only(left: 20),
-        title: Text(
-          "Yokesh Mithoon (You)",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          "Student at NIT Calicut",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
-      ListTile(
-        leading: CircleAvatar(
-            minRadius: 22.5,
-            maxRadius: 22.5,
-            child: Image.asset("assets/images/Vector (1).png")),
-        contentPadding: EdgeInsets.only(left: 20),
-        title: Text(
-          "Yokesh Mithoon (You)",
-          style: TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          "Student at NIT Calicut",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-      ),
-      Divider(
-        height: 2,
-        thickness: 1,
-      ),
+    List data = [
+      {
+        "title": "Yokesh Mithoon (You)",
+        "subtitle": "Student at NIT Calicut",
+        "icon": "assets/images/Vector (1).png",
+        "badge": "",
+      },
+      {
+        "title": "Wade Warren",
+        "subtitle": "Student at NIT Calicut",
+        "icon": "assets/images/Vector (2).png",
+        "badge": "",
+      },
+      {
+        "title": "yogeshmithoon@gmail.com",
+        "subtitle": "",
+        "icon": "assets/images/Vector (2).png",
+        "badge": "",
+      },
+      {
+        "title": "Cameron Williamson",
+        "subtitle": "Interaction Manager",
+        "icon": "assets/images/Vector (3).png",
+        "badge": "Manager",
+      },
+      {
+        "title": "Yokesh Mithoon (You)",
+        "subtitle": "Student at NIT Calicut",
+        "icon": "assets/images/Vector (1).png",
+        "badge": "",
+      },
+      {
+        "title": "Wade Warren",
+        "subtitle": "Student at NIT Calicut",
+        "icon": "assets/images/Vector (2).png",
+        "badge": "",
+      },
+      {
+        "title": "yogeshmithoon@gmail.com",
+        "subtitle": "",
+        "icon": "assets/images/Vector (2).png",
+        "badge": "",
+      },
+      {
+        "title": "Cameron Williamson",
+        "subtitle": "Interaction Manager",
+        "icon": "assets/images/Vector (3).png",
+        "badge": "Manager",
+      },
     ];
+
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
       width: size.width,
       child: Stack(
+        overflow: Overflow.visible,
         children: [
           Container(
-            height: size.height,
+            height: 300,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     colors: [Color(0xff0659ac), Color(0xff179ee6)],
@@ -225,7 +150,6 @@ class CC5 extends StatelessWidget {
               contentPadding:
                   EdgeInsets.only(top: 22, bottom: 0, left: 0, right: 0),
               leading: Container(
-                height: double.infinity,
                 child: IconButton(
                   onPressed: () {},
                   padding: EdgeInsets.only(right: 40),
@@ -273,6 +197,7 @@ class CC5 extends StatelessWidget {
           ),
           Positioned(
             top: 106,
+            height: size.height - kBottomNavigationBarHeight - 106,
             width: size.width,
             child: Column(
               children: <Widget>[
@@ -376,18 +301,10 @@ class CC5 extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: size.width,
-                  height: 4,
-                  color: Colors.white,
-                  child: Container(
-                      width: size.width,
-                      height: 4,
-                      color: Color(0xff96a7af).withOpacity(0.3)),
-                ),
-                Container(
-                  height: size.height,
-                  width: size.width,
-                  color: Colors.white,
+                    width: size.width,
+                    height: 4,
+                    color: Color(0xff96a7af).withOpacity(0.3)),
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -424,16 +341,48 @@ class CC5 extends StatelessWidget {
                               color: Color(0xff3e3e3e).withOpacity(0.3)),
                         ),
                       ),
-                      SingleChildScrollView(
-                        child: Container(
-                          padding: EdgeInsets.all(0),
-                          height: 300,
-                          margin: EdgeInsets.only(
-                              bottom: kBottomNavigationBarHeight),
-                          child: ListView(
-                            padding: EdgeInsets.all(0),
-                            children: items2,
+                      Expanded(
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) => Divider(
+                            thickness: 1,
                           ),
+                          shrinkWrap: true,
+                          itemCount: data.length,
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              leading: CircleAvatar(
+                                  minRadius: 22.5,
+                                  maxRadius: 22.5,
+                                  child: Image.asset(data[index]["icon"])),
+                              contentPadding:
+                                  EdgeInsets.only(left: 20, right: 20),
+                              title: Text(
+                                data[index]["title"],
+                                style: TextStyle(fontWeight: FontWeight.w600),
+                              ),
+                              subtitle: Text(
+                                data[index]["subtitle"],
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                              ),
+                              trailing: data[index]["badge"] == ""
+                                  ? Text("")
+                                  : Container(
+                                      alignment: Alignment.center,
+                                      width: 70,
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(
+                                            color: Color(0xff44b887)),
+                                      ),
+                                      child: Text(
+                                        data[index]["badge"],
+                                        style:
+                                            TextStyle(color: Color(0xff44b887)),
+                                      ),
+                                    ),
+                            );
+                          },
                         ),
                       )
                     ],
